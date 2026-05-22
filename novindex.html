@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" sizes="32x32" href="slike/favicon-virus.png">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="slike/favicon-virus.png" alt="Virus logo">
+                <span>Virus</span>
+            </a>
+
+            <!-- NAV -->
+            <nav>
+                <ul class="menu" id="menu">
+                    <li><a href="index.html">Početna</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Kolekcija <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" onclick="filterProducts('haljina')">Haljine</a></li>
+                            <li><a href="#" onclick="filterProducts('komplet')">Kompleti</a></li>
+                            <li><a href="#" onclick="filterProducts('pantalone')">Pantalone</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="Onama.html">O nama</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <!-- DESNA STRANA -->
+            <div class="header-icons">
+                <div class="cart" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- GLAVNI SADRŽAJ -->
+    <main>
+        <section class="products">
+            <h2>Naša kolekcija</h2>
+
+            <div class="filters">
+                <button onclick="filterProducts('all')">Svi</button>
+                <button onclick="filterProducts('haljina')">Haljine</button>
+                <button onclick="filterProducts('majica')">Majice</button>
+                <button onclick="filterProducts('pantalone')">Pantalone</button>
+            </div>
+
+
+            <div class="product-grid">
+
+                <div class="product-card" data-category="haljina">
+                    <img src="slike/haljina1.png" alt="Proizvod">
+                    <h3>Elegantna haljina</h3>
+                    <p class="price">4.500 RSD</p>
+                    <button onclick="addToCart('Elegantna haljina', 4500, 'slike/haljina1.png')">Dodaj u korpu</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="slike/haljina18.png" alt="Proizvod">
+                    <h3>Letnja haljina</h3>
+                    <p class="price">1.800 RSD</p>
+                    <button onclick="addToCart('Letnja haljina', 1800, 'slike/haljina18.png')">Dodaj u korpu</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="slike/haljina10.png" alt="Proizvod">
+                    <h3>Haljina</h3>
+                    <p class="price">3.200 RSD</p>
+                    <button onclick="addToCart('Haljina', 3200, 'slike/haljina10.png')">Dodaj u korpu</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="slike/haljina15.png" alt="Proizvod">
+                    <h3>Haljina</h3>
+                    <p class="price">6.900 RSD</p>
+                    <button onclick="addToCart('Haljina', 6900, 'slike/haljina15.png')">Dodaj u korpu</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- LOGO + OPIS -->
+            <div class="footer-box">
+                <div class="footer-logo">
+                    <img src="slike/viruslogo.jpg" alt="Virus logo">
+                    <h2>Virus</h2>
+                </div>
+                <p>Moderan butik odeće koji spaja noviju i stariju modu. Mesto sa jedinstvenim stilom. Kvalitet i stil
+                    na jednom mestu.</p>
+            </div>
+
+            <!-- BRZI LINKOVI -->
+            <div class="footer-box">
+                <h3></h3>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="#">Kolekcija</a></li>
+                    <li><a href="Onama.html">O nama</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <!-- KONTAKT -->
+            <div class="footer-box">
+                <h3>Kontakt</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Dunavska 6 Novi Sad</p>
+                <p><i class="fa-solid fa-phone"></i> +381 69 1007156</p>
+                <p><i class="fa-solid fa-envelope"></i> dobran.djordje@gmail.com</p>
+            </div>
+
+            <!-- DRUŠTVENE MREŽE -->
+            <div class="footer-box">
+                <h3>Zapratite nas</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/butikvirus"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/butikvirus/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Virus Boutik | Sva prava zadržana</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function addToCart(name, price, image = "slike/default.png") {
+            cart.push({ name, price, image });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            document.getElementById("cart-count").innerText = cart.length;
+        }
+
+        // učitavanje pri refresh
+        updateCartCount();
+
+
+        function filterProducts(category) {
+    const products = document.querySelectorAll(".product-card");
+
+    products.forEach(product => {
+        const productCategory = product.getAttribute("data-category");
+
+        if (category === "all" || productCategory === category) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+
+
+function filterProducts(category) {
+    const products = document.querySelectorAll(".product-card");
+    const buttons = document.querySelectorAll(".filters button");
+
+    // reset active button (ako postoji klik iz filter dugmeta)
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    products.forEach(product => {
+        const productCategory = product.getAttribute("data-category");
+
+        if (category === "all" || productCategory === category) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+    </script>
+
+</body>
+
+</html>

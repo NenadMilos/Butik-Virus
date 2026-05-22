@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" sizes="32x32" href="slike/favicon-virus.png">
+
+</head>
+
+<body>
+
+    
+    <header class="header">
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="header-container">
+
+            
+            <a href="index.html" class="logo">
+                <img src="slike/favicon-virus.png" alt="Virus logo">
+                <span>Virus</span>
+            </a>
+
+           
+            <nav>
+                <ul class="menu" id="menu">
+                    <li><a href="index.html">Početna</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Shop <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="shop.html" onclick="filterProducts('haljina')">Haljine</a></li>
+                            <li><a href="shop.html" onclick="filterProducts('komplet')">Kompleti</a></li>
+                            <li><a href="shop.html" onclick="filterProducts('pantalone')">Pantalone</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="Onama.html">O nama</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            
+            <div class="header-icons">
+                <div class="cart" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    
+    <main>
+
+
+        <section class="hero-models">
+
+    <div class="hero-left">
+        <img src="slike/model1.png" alt="">
+    </div>
+
+    <div class="hero-center">
+        <img src="slike/model3.png" alt="">
+        <div class="hero-text">
+            <h1>Nova kolekcija</h1>
+            <p>Otkrij stil koji te definiše</p>
+            <a href="shop.html" class="hero-btn">Pogledaj shop</a>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <img src="slike/model6.png" alt="">
+    </div>
+
+</section>
+
+        <section class="categories">
+
+    <a href="shop.html?cat=haljine">
+        <img src="slike/haljina11.png">
+        <p>Haljine</p>
+    </a>
+
+    <a href="shop.html?cat=kompleti">
+        <img src="slike/komplet1.png">
+        <p>Kompleti</p>
+    </a>
+
+    <a href="shop.html?cat=pantalone">
+        <img src="slike/gdeo1.png">
+        <p>Pantalone</p>
+    </a>
+
+</section>
+
+<section class="new-arrivals">
+     <h2>Najnovije u ponudi</h2>
+     <br>
+
+    <div class="new-grid">
+
+        <div class="new-card">
+            <img src="slike/haljina1.png">
+            <h4>Elegantna haljina</h4>
+            <p class="price">4.500 RSD</p>
+            <button onclick="addToCart('Elegantna haljina', 4500, 'slike/haljina1.png')">
+                Dodaj u korpu
+            </button>
+        </div>
+
+         <div class="new-card">
+            <img src="slike/haljina1.png">
+            <h4>Elegantna haljina</h4>
+            <p class="price">4.500 RSD</p>
+            <button onclick="addToCart('Elegantna haljina', 4500, 'slike/haljina1.png')">
+                Dodaj u korpu
+            </button>
+        </div>
+
+         <div class="new-card">
+            <img src="slike/haljina1.png">
+            <h4>Elegantna haljina</h4>
+            <p class="price">4.500 RSD</p>
+            <button onclick="addToCart('Elegantna haljina', 4500, 'slike/haljina1.png')">
+                Dodaj u korpu
+            </button>
+        </div>
+
+         <div class="new-card">
+            <img src="slike/haljina1.png">
+            <h4>Elegantna haljina</h4>
+            <p class="price">4.500 RSD</p>
+            <button onclick="addToCart('Elegantna haljina', 4500, 'slike/haljina1.png')">
+                Dodaj u korpu
+            </button>
+        </div>
+
+         <div class="new-card">
+            <img src="slike/haljina1.png">
+            <h4>Elegantna haljina</h4>
+            <p class="price">4.500 RSD</p>
+            <button onclick="addToCart('Elegantna haljina', 4500, 'slike/haljina1.png')">
+                Dodaj u korpu
+            </button>
+        </div>
+
+         <div class="new-card">
+            <img src="slike/haljina1.png">
+            <h4>Elegantna haljina</h4>
+            <p class="price">4.500 RSD</p>
+            <button onclick="addToCart('Elegantna haljina', 4500, 'slike/haljina1.png')">
+                Dodaj u korpu
+            </button>
+        </div>
+
+         
+
+    <a href="shop.html" class="view-all">Pogledaj sve proizvode</a>
+</section>
+
+    </main>
+
+    
+    <footer class="footer">
+        <div class="footer-container">
+
+            
+            <div class="footer-box">
+                <div class="footer-logo">
+                    <img src="slike/viruslogo.jpg" alt="Virus logo">
+                    <h2>Virus</h2>
+                </div>
+                <p>Moderan butik odeće koji spaja noviju i stariju modu. Mesto sa jedinstvenim stilom. Kvalitet i stil
+                    na jednom mestu.</p>
+            </div>
+
+          
+            <div class="footer-box">
+                <h3></h3>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="#">Kolekcija</a></li>
+                    <li><a href="Onama.html">O nama</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="footer-box">
+                <h3>Kontakt</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Dunavska 6 Novi Sad</p>
+                <p><i class="fa-solid fa-phone"></i> +381 69 1007156</p>
+                <p><i class="fa-solid fa-envelope"></i> dobran.djordje@gmail.com</p>
+            </div>
+
+            
+            <div class="footer-box">
+                <h3>Zapratite nas</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/butikvirus"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/butikvirus/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Virus Boutik | Sva prava zadržana</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" sizes="32x32" href="slike/favicon-virus.png">
+
+</head>
+
+<body>
+
+   
+    <header class="header">
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="header-container">
+
+            
+            <a href="index.html" class="logo">
+                <img src="slike/favicon-virus.png" alt="Virus logo">
+                <span>Virus</span>
+            </a>
+
+            
+            <nav>
+                <ul class="menu" id="menu">
+                    <li><a href="index.html">Početna</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Kolekcija <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Haljine</a></li>
+                            <li><a href="#">Majice</a></li>
+                            <li><a href="#">Pantalone</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="Onama.html">O nama</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            
+            <div class="header-icons">
+                <div class="cart" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+<main>
+    <section class="cart-page">
+        <h2>Vaša korpa</h2>
+
+        <div id="cart-items"></div>
+
+        <h3 id="total-price"></h3>
+    </section>
+
+    <section class="checkout">
+    <h2>Podaci za porudžbinu</h2>
+
+    <form onsubmit="submitOrder(event)">
+        <input type="text" placeholder="Ime i prezime" required>
+        <input type="text" placeholder="Adresa" required>
+        <input type="tel" placeholder="Telefon" required>
+
+        <button type="submit">Potvrdi porudžbinu</button>
+    </form>
+</section>
+</main>
+
+
+     <footer class="footer">
+        <div class="footer-container">
+
+            
+            <div class="footer-box">
+                <div class="footer-logo">
+                    <img src="slike/viruslogo.jpg" alt="Virus logo">
+                    <h2>Virus</h2>
+                </div>
+                <p>Moderan butik odeće koji spaja noviju i stariju modu. Mesto sa jedinstvenim stilom. Kvalitet i stil
+                    na jednom mestu.</p>
+            </div>
+
+            
+            <div class="footer-box">
+                <h3></h3>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="#">Kolekcija</a></li>
+                    <li><a href="Onama.html">O nama</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+
+           
+            <div class="footer-box">
+                <h3>Kontakt</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Dunavska 6 Novi Sad</p>
+                <p><i class="fa-solid fa-phone"></i> +381 69 1007156</p>
+                <p><i class="fa-solid fa-envelope"></i> dobran.djordje@gmail.com</p>
+            </div>
+
+            
+            <div class="footer-box">
+                <h3>Zapratite nas</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/butikvirus"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/butikvirus/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Virus Boutik | Sva prava zadržana</p>
+        </div>
+    </footer>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function renderCart() {
+    let container = document.getElementById("cart-items");
+    let total = 0;
+
+    container.innerHTML = "";
+
+    if (cart.length === 0) {
+        container.innerHTML = "<p>Korpa je prazna.</p>";
+        document.getElementById("total-price").innerText = "";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        total += item.price;
+
+        container.innerHTML += `
+            <div class="cart-item">
+
+        <div class="cart-left">
+            <img src="${item.image}" alt="${item.name}">
+        </div>
+
+        <div class="cart-middle">
+            <h4>${item.name}</h4>
+            <p>${item.price} RSD</p>
+        </div>
+
+        <div class="cart-right">
+            <button onclick="removeItem(${index})">Obriši</button>
+        </div>
+
+    </div>
+        `;
+    });
+
+    document.getElementById("total-price").innerText = "Ukupno: " + total + " RSD";
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+}
+
+function submitOrder(event) {
+    event.preventDefault();
+
+    if (cart.length === 0) {
+        alert("Korpa je prazna!");
+        return;
+    }
+
+    alert("Uspešno ste poslali porudžbinu!");
+
+    // očisti korpu
+    localStorage.removeItem("cart");
+    cart = [];
+
+    rennderCart();
+}
+
+renderCart();
+</script>
+
+</body>
+</html>
